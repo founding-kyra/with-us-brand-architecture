@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WITH US — Brand Guidelines</title>
+<meta name="description" content="With Us Brand Guidelines. Rejection Created Obsession." />
+
+<!-- Roboto Condensed (Google-published, identical to supplied family). Swap for local /fonts files to go fully offline — see README. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;500;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ============================================================
+   FONTS — Rubik bundled locally (/fonts), Roboto Condensed via CDN
+   ============================================================ */
+@font-face{font-family:'Rubik';src:url('fonts/Rubik-Light.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:'Rubik';src:url('fonts/Rubik-Regular.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'Rubik';src:url('fonts/Rubik-Medium.woff2') format('woff2');font-weight:500;font-style:normal;font-display:swap}
+@font-face{font-family:'Rubik';src:url('fonts/Rubik-Bold.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap}
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --near-black:#2b2b2b;
+  --champagne:#afa69c;
+  --champagne-svg:#aea59c;
+  --stone:#c2bdba;
+  --concrete:#d4d4d4;
+  --off-white:#efefef;
+  --paper:#f7f6f4;
+  --white:#ffffff;
+
+  --ink:#2b2b2b;
+  --ink-soft:#6f6a64;
+  --line:#e3e1dd;
+
+  --display:'Rubik',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --body:'Atkinson Hyperlegible',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+
+  --maxw:1180px;
+  --gutter:clamp(22px,5vw,90px);
+  --section-y:clamp(80px,12vh,180px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  font-weight:400;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ============================================================
+   TYPE PRIMITIVES
+   ============================================================ */
+.display{font-family:var(--display);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-.01em}
+.kicker{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.34em;font-size:12px}
+.eyebrow{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.28em;font-size:13px;color:var(--ink-soft)}
+.lede{font-size:clamp(19px,2.1vw,24px);line-height:1.55;font-weight:300;max-width:48ch}
+p{max-width:62ch}
+.muted{color:var(--ink-soft)}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap{max-width:var(--maxw);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter);width:100%}
+section{padding-top:var(--section-y);padding-bottom:var(--section-y);position:relative}
+.section-head{display:flex;align-items:baseline;gap:18px;margin-bottom:clamp(40px,6vh,80px)}
+.section-head .no{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.2em;color:var(--champagne);padding-top:4px}
+.section-head h2{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(34px,6vw,76px);line-height:.9;letter-spacing:-.015em}
+.grid{display:grid;gap:clamp(28px,4vw,64px)}
+.cols-2{grid-template-columns:1fr 1fr}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.block + .block{margin-top:clamp(48px,7vh,96px)}
+.block h3{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:clamp(20px,2.4vw,30px);letter-spacing:.01em;line-height:1;margin-bottom:18px}
+.block .tag{display:block;font-family:var(--display);text-transform:uppercase;letter-spacing:.26em;font-size:11px;color:var(--champagne);margin-bottom:14px}
+.block p + p{margin-top:16px}
+
+/* DARK SECTIONS */
+.dark{background:var(--near-black);color:var(--stone)}
+.dark h2,.dark h3,.dark .display{color:var(--off-white)}
+.dark .muted{color:#8d877f}
+.dark .eyebrow{color:var(--champagne)}
+.dark .section-head .no{color:var(--champagne)}
+.dark p{color:var(--stone)}
+
+/* ============================================================
+   TOP BAR + NAV
+   ============================================================ */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--gutter);mix-blend-mode:difference;color:#fff;pointer-events:none}
+.topbar .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;letter-spacing:.3em;font-size:14px;text-transform:uppercase}
+.topbar .brand svg{width:20px;height:20px;fill:#fff}
+.topbar .meta{font-family:var(--display);letter-spacing:.24em;font-size:11px;text-transform:uppercase;opacity:.85}
+
+/* side index */
+.sidenav{position:fixed;right:max(18px,2.2vw);top:50%;transform:translateY(-50%);z-index:40;display:flex;flex-direction:column;gap:11px}
+.sidenav a{display:flex;align-items:center;gap:10px;justify-content:flex-end;font-family:var(--display);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--ink-soft);opacity:.5;transition:opacity .25s,color .25s}
+.sidenav a .dot{width:7px;height:7px;border-radius:50%;border:1px solid currentColor;transition:background .25s,transform .25s}
+.sidenav a .lbl{opacity:0;transform:translateX(6px);transition:opacity .25s,transform .25s;white-space:nowrap}
+.sidenav a:hover{opacity:1}
+.sidenav a:hover .lbl{opacity:1;transform:translateX(0)}
+.sidenav a.active{opacity:1;color:var(--ink)}
+.sidenav a.active .dot{background:var(--champagne);border-color:var(--champagne);transform:scale(1.25)}
+body.on-dark .sidenav a{color:var(--stone)}
+body.on-dark .sidenav a.active{color:var(--off-white)}
+@media(max-width:900px){.sidenav{display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{min-height:100vh;background:var(--near-black);color:var(--off-white);display:flex;flex-direction:column;justify-content:space-between;
+  padding:120px var(--gutter) 48px;position:relative;overflow:hidden}
+.hero .mono{position:absolute;right:var(--gutter);top:50%;transform:translateY(-50%);width:min(46vw,560px);opacity:.07;pointer-events:none}
+.hero .mono svg{width:100%;height:auto;fill:var(--champagne)}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;position:relative;z-index:2}
+.hero-center{position:relative;z-index:2;margin:auto 0}
+.hero-center .hero-wordmark{display:block;width:min(92vw,1000px);height:auto}
+.hero-center .ethos{font-family:var(--display);font-weight:500;text-transform:uppercase;letter-spacing:.3em;font-size:clamp(13px,1.6vw,18px);color:var(--champagne);margin-top:24px}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;position:relative;z-index:2;flex-wrap:wrap}
+.hero-foot .sub{max-width:40ch;color:var(--stone);font-weight:300;font-size:15px}
+.scroll-cue{font-family:var(--display);text-transform:uppercase;letter-spacing:.24em;font-size:11px;color:var(--stone);display:flex;align-items:center;gap:10px}
+.scroll-cue .ln{width:46px;height:1px;background:var(--champagne);display:inline-block;transform-origin:left;animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleX(.3);opacity:.4}50%{transform:scaleX(1);opacity:1}}
+
+/* ============================================================
+   PULL QUOTE
+   ============================================================ */
+.quote{padding:clamp(80px,14vh,200px) 0}
+.quote blockquote{font-family:var(--display);font-weight:700;text-transform:uppercase;
+  font-size:clamp(30px,6.4vw,88px);line-height:.96;letter-spacing:-.01em;max-width:16ch}
+.quote .src{margin-top:28px;font-family:var(--display);letter-spacing:.24em;text-transform:uppercase;font-size:12px;color:var(--champagne)}
+.quote em{color:var(--champagne);font-style:normal}
+
+/* ============================================================
+   CARDS / TABLES
+   ============================================================ */
+.card{border:1px solid var(--line);padding:clamp(22px,3vw,38px);background:var(--white)}
+.dark .card{border-color:#3d3a36;background:#323230}
+.card h4{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:17px;letter-spacing:.02em;margin-bottom:10px}
+.card p{font-size:15px;color:var(--ink-soft)}
+.dark .card p{color:var(--stone)}
+
+.vtable{width:100%;border-collapse:collapse;font-size:15px}
+.vtable th{font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:11px;text-align:left;
+  padding:0 18px 14px 0;color:var(--ink-soft);font-weight:500;border-bottom:1px solid var(--line)}
+.vtable td{padding:18px 18px 18px 0;vertical-align:top;border-bottom:1px solid var(--line);color:var(--ink)}
+.vtable tr td:first-child{font-weight:500;width:30%}
+.dark .vtable th{color:var(--champagne);border-color:#3d3a36}
+.dark .vtable td{color:var(--stone);border-color:#3d3a36}
+.donot td:first-child{color:#b06a5e}
+.dosay td:last-child{color:var(--ink)}
+
+/* ============================================================
+   LOGO SHOWCASE
+   ============================================================ */
+.logo-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.logo-tile{aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;position:relative;border:1px solid var(--line)}
+.logo-tile.on-light{background:var(--off-white)}
+.logo-tile.on-dark{background:var(--near-black);border-color:#3d3a36}
+.logo-tile svg{width:38%;height:auto}
+.logo-tile.word svg{width:62%}
+.logo-tile .cap{position:absolute;bottom:14px;left:16px;font-family:var(--display);text-transform:uppercase;letter-spacing:.2em;font-size:10px;color:var(--ink-soft)}
+.logo-tile.on-dark .cap{color:#8d877f}
+.fill-dark{fill:var(--near-black)}
+.fill-champ{fill:var(--champagne-svg)}
+
+.clearspace{border:1px solid var(--line);padding:clamp(26px,4vw,56px);display:flex;justify-content:center;background:var(--white)}
+.clearspace .cs-inner{position:relative;padding:18%;}
+.clearspace svg{width:120px;height:120px;fill:var(--near-black)}
+.clearspace .ring{position:absolute;inset:0;border:1px dashed var(--concrete)}
+.clearspace .u{position:absolute;font-family:var(--display);font-size:11px;letter-spacing:.2em;color:var(--ink-soft);text-transform:uppercase}
+
+.donts{display:grid;grid-template-columns:1fr 1fr;gap:14px 40px}
+.donts div{display:flex;gap:12px;font-size:14.5px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
+.donts .x{color:#b06a5e;font-weight:700;font-family:var(--display)}
+.dark .donts div{border-color:#3d3a36}
+
+/* ============================================================
+   COLOR
+   ============================================================ */
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.swatch{cursor:pointer;border:1px solid var(--line);background:var(--white);overflow:hidden;transition:transform .2s}
+.swatch:hover{transform:translateY(-4px)}
+.swatch .chip{height:130px;width:100%}
+.swatch .meta{padding:14px 14px 18px}
+.swatch .nm{font-family:var(--display);text-transform:uppercase;font-weight:700;font-size:14px;letter-spacing:.04em}
+.swatch .hex{font-size:12px;color:var(--ink-soft);margin-top:4px;letter-spacing:.05em}
+.swatch .use{font-size:11.5px;color:var(--ink-soft);margin-top:10px;line-height:1.45}
+.swatch .copy{font-family:var(--display);font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--champagne);margin-top:10px;opacity:0;transition:opacity .2s}
+.swatch:hover .copy{opacity:1}
+.dark .swatch{background:#323230;border-color:#3d3a36}
+.dark .swatch .nm{color:var(--off-white)}
+.dark .swatch .hex,.dark .swatch .use{color:#8d877f}
+@media(max-width:760px){.swatches{grid-template-columns:repeat(2,1fr)}}
+
+/* ============================================================
+   TYPE SPECIMEN
+   ============================================================ */
+.type-spec{border-top:1px solid var(--line);padding:34px 0;display:grid;grid-template-columns:160px 1fr;gap:30px;align-items:baseline}
+.dark .type-spec{border-color:#3d3a36}
+.type-spec .label{font-family:var(--display);text-transform:uppercase;font-size:11px;letter-spacing:.18em;color:var(--ink-soft)}
+.type-spec .label b{display:block;color:var(--champagne);font-weight:700;margin-bottom:6px}
+.spec-roboto-bold{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(34px,5vw,60px);line-height:.95;letter-spacing:-.01em}
+.spec-roboto-reg{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(22px,3vw,34px);letter-spacing:.02em}
+.spec-rubik{font-family:var(--body);font-weight:400;font-size:18px;line-height:1.6;max-width:52ch}
+.spec-rubik-bold{font-family:var(--body);font-weight:700;font-size:15px;letter-spacing:.02em}
+.glyphs{font-family:var(--display);font-weight:700;font-size:clamp(28px,4vw,44px);letter-spacing:.06em;color:var(--ink-soft)}
+@media(max-width:680px){.type-spec{grid-template-columns:1fr;gap:12px}}
+
+/* ============================================================
+   FEATURE IMAGE
+   ============================================================ */
+.feature{display:grid;grid-template-columns:1fr 1fr;gap:0;align-items:stretch;min-height:70vh}
+.feature .img{background:#1d1d1d center/cover no-repeat}
+.feature .txt{padding:clamp(40px,7vw,110px) var(--gutter);display:flex;flex-direction:column;justify-content:center}
+@media(max-width:860px){.feature{grid-template-columns:1fr}.feature .img{min-height:54vh}}
+
+/* ============================================================
+   PRINCIPLE STRIP
+   ============================================================ */
+.principles{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.dark .principles{background:#3d3a36;border-color:#3d3a36}
+.principles .p{background:var(--paper);padding:clamp(26px,3.4vw,44px)}
+.dark .principles .p{background:var(--near-black)}
+.principles .p .n{font-family:var(--display);font-weight:700;color:var(--champagne);font-size:13px;letter-spacing:.16em;margin-bottom:14px}
+.principles .p p{font-size:15px;color:var(--ink-soft)}
+.dark .principles .p p{color:var(--stone)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{background:var(--near-black);color:var(--stone);padding:clamp(70px,10vh,130px) var(--gutter) 46px}
+.foot .big{font-family:var(--display);font-weight:700;text-transform:uppercase;font-size:clamp(48px,13vw,180px);line-height:.84;color:var(--off-white);letter-spacing:-.02em}
+.foot .ethos{font-family:var(--display);letter-spacing:.3em;text-transform:uppercase;color:var(--champagne);font-size:13px;margin-top:22px}
+.foot .meta{margin-top:60px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;font-size:12px;color:#8d877f;
+  border-top:1px solid #3d3a36;padding-top:24px;font-family:var(--display);letter-spacing:.14em;text-transform:uppercase}
+
+@media(max-width:760px){.cols-2,.cols-3,.logo-grid,.donts,.principles{grid-template-columns:1fr}}
+
+/* toast */
+#toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--near-black);color:var(--off-white);
+  font-family:var(--display);text-transform:uppercase;letter-spacing:.18em;font-size:11px;padding:12px 20px;opacity:0;pointer-events:none;
+  transition:opacity .25s,transform .25s;z-index:99;border:1px solid var(--champagne)}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- reusable monogram symbol -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wu-mark" viewBox="0 0 1000 1000">
+    <path d="M311.38,745.73c-31.22,17.63-65.97,28.66-100.63,18.31-15.96-4.77-28.26-16.13-34.05-31.89-4.17-11.36-6.82-23.41-6.83-36.02l-.34-278.89c-2.19-41.3,1.07-73.38-42.49-94.23,55.13-14.09,101.57-41.57,136.05-83.9,2.07-.73,4.29-.72,6.86,0l.22,392.88c0,12.67,3.2,25.53,7.95,36.58,7.21,16.79,22.18,27.22,40.05,28.6,27.86,2.16,54.5-5.83,78.12-21.4,2.43,5.14.07,8.26-3.74,11.56-25.38,21.9-51.65,41.73-81.16,58.39Z"/>
+    <path d="M537.25,753.97l-107.65-.02-.25-300.93s-3.49-80.1-7.26-93.4c-5.38-17.95-17.58-27.24-35.86-36.69,55.93-13.67,102.76-41.18,138.39-84.15,2.53-.3,5.63-.24,8.21.24,0,0-11.52,415.76,4.42,514.94Z"/>
+    <path d="M752.67,725.38c-12.13,30.03-50.08,33.15-78.16,24.62-18.64-5.67-35.87-14.67-52.27-25.69-19.72-13.25-39.31-26.94-57.02-45.75,22.17,11.03,41.45,18.55,65.37,17.22,36.72-2.04,45.1-34.57,45.73-66.85l1.7-87.93.7-235.66c.09-31.64,4.12-62.74,38.05-70.95,34.18-8.27,63.32,6.03,92.86,23.09,21.7,14.79,43.88,29.33,63.34,50.05-22.87-11.26-43.1-19.26-67.52-17.19-18.37,1.56-32.37,13.15-38.32,31-4.13,12.4-5.02,25.44-5.16,39.08l-2,205.04-.59,70.08-.59,61.79c-.1,9.92-2.5,19.15-6.1,28.07Z"/>
+  </symbol>
+</svg>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="brand"><svg><use href="#wu-mark"/></svg> With&nbsp;Us</div>
+  <div class="meta">Brand Guidelines · 2026</div>
+</div>
+
+<!-- SIDE INDEX -->
+<nav class="sidenav" aria-label="Section index">
+  <a href="#foundation" data-t="Foundation"><span class="lbl">Foundation</span><span class="dot"></span></a>
+  <a href="#voice" data-t="Persona"><span class="lbl">Persona &amp; Voice</span><span class="dot"></span></a>
+  <a href="#market" data-t="Market"><span class="lbl">Positioning</span><span class="dot"></span></a>
+  <a href="#audience" data-t="Audience"><span class="lbl">Audience</span><span class="dot"></span></a>
+  <a href="#identity" data-t="Identity"><span class="lbl">Visual Identity</span><span class="dot"></span></a>
+  <a href="#product" data-t="Product"><span class="lbl">Product</span><span class="dot"></span></a>
+  <a href="#growth" data-t="Growth"><span class="lbl">Growth</span><span class="dot"></span></a>
+  <a href="#digital" data-t="Digital"><span class="lbl">Digital</span><span class="dot"></span></a>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="mono"><svg viewBox="0 0 1000 1000"><use href="#wu-mark"/></svg></div>
+  <div class="hero-top">
+    <div class="kicker" style="color:var(--champagne)">Brand Architecture</div>
+    <div class="kicker" style="color:var(--stone)">Confidential · 2026</div>
+  </div>
+  <div class="hero-center">
+    <svg class="hero-wordmark" viewBox="150 258 920 168" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="With Us">
+      <text fill="var(--champagne)" font-family="'Helvetica Neue LT Pro','Helvetica Neue',Helvetica,Arial,sans-serif" font-weight="700" font-size="140.09" letter-spacing="12.6" transform="translate(191.04 383.11) scale(1.18 1)"><tspan x="0" y="0">WITHUS</tspan></text>
+    </svg>
+    <div class="ethos">Rejection Created Obsession</div>
+  </div>
+  <div class="hero-foot">
+    <p class="sub">You are not buying a shirt. You are joining a collective that was built for people who were told no and decided to build something better.</p>
+    <div class="scroll-cue"><span class="ln"></span> Scroll</div>
+  </div>
+</header>
+
+<!-- ============ 01 FOUNDATION ============ -->
+<section id="foundation">
+  <div class="wrap">
+    <div class="section-head"><span class="no">01</span><h2>Brand<br>Foundation</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Name</span>
+        <h3>What With Us Means</h3>
+      </div>
+      <div>
+        <p>With Us is not a brand name that was focus-grouped or designed to be clever. It came from something real. It reflects a way of moving through the world with your people beside you, not behind you. Not below you. The name carries a quiet but firm belief: that you go further when you go together, that the person next to you is part of the mission, not an afterthought.</p>
+        <p>In an industry full of brands that chase exclusivity through rejection, With Us takes a different stance. It builds walls the right way: not to keep people out, but to make the people inside feel like they genuinely belong to something.</p>
+        <p>You are not buying a shirt. You are joining a collective that was built for people who were told no and decided to build something better.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Ethos</span>
+        <h3>Rejection Created Obsession</h3>
+      </div>
+      <div>
+        <p>This is not just a tagline. It is a founding truth. The people behind With Us know what it feels like to be overlooked, cut, passed over. They did not walk away from that. They walked toward something. That energy, that specific kind of focused hunger that only comes from being told you are not enough, is baked into the DNA of this brand.</p>
+        <p>It shows up in the details of the garments. It shows up in the way the brand chooses to grow. It shows up in the decision to make something premium not to exclude people but to fund a bigger vision for the communities they came from.</p>
+        <p>Every product that ships, every event that runs, every partnership that lands is proof of concept. Proof that rejection was the best thing that ever happened to them.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Alternate Tagline</span>
+        <h3>Recommended Alternative: &ldquo;Built by the Ones Who Stayed.&rdquo;</h3>
+      </div>
+      <div>
+        <p>The alternate tagline works differently. Where &ldquo;Rejection Created Obsession&rdquo; hits hard and specific, &ldquo;Built by the Ones Who Stayed&rdquo; speaks to endurance, to loyalty, to the kind of people who do not quit when it gets hard. It broadens the emotional entry point without losing the edge. It can live on product tags, on the website footer, in event collateral, anywhere the brand wants to land with weight but without aggression.</p>
+        <p>Both lines can coexist. Use &ldquo;Rejection Created Obsession&rdquo; as the brand&rsquo;s origin statement, the thing that explains where they come from. Use &ldquo;Built by the Ones Who Stayed&rdquo; as the brand&rsquo;s forward-facing identity, the thing that makes someone want to be part of it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<section class="dark quote">
+  <div class="wrap">
+    <blockquote>The brand does not chase. It <em>attracts</em>.</blockquote>
+    <div class="src">Brand Feeling · The Emotional Temperature</div>
+  </div>
+</section>
+
+<!-- ============ 02 PERSONA & VOICE ============ -->
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head"><span class="no">02</span><h2>Brand Persona<br>&amp; Voice</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Person</span>
+        <h3>If With Us Were a Human Being</h3>
+      </div>
+      <div>
+        <p>Picture someone who walks into a room and does not immediately fill it with noise. They are dressed right, not overdressed, just clearly someone who pays attention. They have been through things. You can tell without them saying a word. When they do speak, it is direct, warm, and specific. They are not performing confidence, they actually have it.</p>
+        <p>The brand persona draws from the archetype of Odell Beckham Jr.: an athlete who made fashion a natural extension of who he is rather than a costume. Someone who moves between the locker room and the front row without losing himself in either place. Style without trying. Community without performing. Standards without arrogance.</p>
+        <p>This is the human being the brand aspires to dress, to represent, and ultimately to become in the eyes of its customer.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Feeling</span>
+        <h3>What Interacting With This Brand Feels Like</h3>
+      </div>
+      <div>
+        <p>The benchmark is a high-end watch boutique on a quiet afternoon. Not a mall store. Not a velvet rope. A place where someone who knows what they are doing is genuinely glad you came in, offers you something to sit down with, and talks to you like you have taste because they already assume you do.</p>
+        <p>That is the emotional temperature of With Us. Warm but elevated. Approachable but not cheap. There is no aggressive pitch, no manufactured urgency, no artificial scarcity countdown. The product earns the desire.</p>
+        <p>The brand does not chase. It attracts. And it does that by being exactly what it says it is, consistently, everywhere.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Voice &amp; Tone</span>
+        <h3>How With Us Speaks</h3>
+      </div>
+      <div>
+        <p>The brand voice is grounded, specific, and human. It does not talk down to the customer and it does not try to be cool by being vague. It says what it means in the fewest words that still feel like something.</p>
+        <p>Short sentences carry more weight here than long ones. Plain language is preferred over industry speak. The brand never sounds like it is trying to impress anyone. It is already past that.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="tag">Voice in Practice</span>
+      <h3 style="margin-bottom:28px">How With Us Speaks</h3>
+      <table class="vtable">
+        <thead><tr><th>Context</th><th>Do Not Say</th><th>With Us Says</th></tr></thead>
+        <tbody>
+          <tr class="dosay donot"><td>Homepage Hero</td><td class="muted">Elevate your lifestyle with premium athleisure.</td><td>For the ones who train hard and move different.</td></tr>
+          <tr class="dosay donot"><td>Product Description</td><td class="muted">Our premium tee features an 80/20 cotton-poly blend for ultimate comfort.</td><td>Broken in from the first wear. Built to last past the last rep.</td></tr>
+          <tr class="dosay donot"><td>Email Subject Line</td><td class="muted">New Drop Alert! Limited Stock Available!</td><td>It is here. And it was made for you.</td></tr>
+          <tr class="dosay donot"><td>Social Caption</td><td class="muted">Drip season is officially here. Shop the new collection now!</td><td>Wear it to brunch. Wear it to the track. It handles both.</td></tr>
+          <tr class="dosay donot"><td>Event Invitation</td><td class="muted">Join us for an exclusive brand launch experience.</td><td>Come through. This one is for the community.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 MARKET ============ -->
+<section id="market" class="dark">
+  <div class="wrap">
+    <div class="section-head"><span class="no">03</span><h2>Market<br>Positioning</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The White Space</span>
+        <h3>Where With Us Lives in the Market</h3>
+      </div>
+      <div>
+        <p>The performance apparel market has a gap that nobody has properly filled. On one side, you have luxury streetwear: Chrome Hearts, Rhude, Palm Angels. These brands have desirability in abundance. What they do not have is function. You cannot train in them. They are not built for movement. They exist for the look.</p>
+        <p>On the other side, you have performance-focused brands: Alo, Lululemon, Nike Tech. They have the function. They have the quality. But their aesthetic speaks to a customer who is going to yoga, not to a professional athlete who moves between high-level training and high-level social environments.</p>
+        <p>With Us sits directly in the gap between these two worlds. It is the only choice for the person who refuses to compromise. The athlete who wants to look premium off the field without changing before stepping onto it.</p>
+        <p>Not luxury that pretends to be functional. Not functional that tries to look good. Both things, built correctly, from the ground up.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Pricing Philosophy</span>
+        <h3>Nike vs. Shaq&rsquo;s: Why Premium Pricing Has a Mission</h3>
+      </div>
+      <div>
+        <p>The brand deliberately prices at the premium end. This is not ego. It is strategy with a conscience. The working principle is simple: build something so desirable and so well-made for the customer who can afford it that the margins fund the mission for the community that cannot.</p>
+        <p>Premium pricing builds aspiration in the market. It creates the kind of desire that trickles down organically, where a kid sees someone they respect wearing it and wants to earn it for themselves. Meanwhile, the revenue from those premium margins funds youth sponsorships, community clinics, and accessible gear for athletes who are on their way up but not there yet.</p>
+        <p>This is not charity. It is a business model with values built in from the start.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 AUDIENCE ============ -->
+<section id="audience">
+  <div class="wrap">
+    <div class="section-head"><span class="no">04</span><h2>Target<br>Audience</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Primary Customer</span>
+        <h3>The With Us Customer</h3>
+      </div>
+      <div>
+        <p>The primary With Us customer is 18 to 32 years old. They are an athlete, a musician, an entertainer, or someone adjacent to those worlds. They train seriously. They have taste. They know the difference between something well-made and something that just looks well-made. They move between environments, from the training facility to the studio to the restaurant, and they do not want to change clothes to do it.</p>
+        <p>They are trend-conscious but not trend-chasing. They set the direction, they do not follow it. They have an opinion on Jerry Lorenzo&rsquo;s last collection and they also have an opinion on proper compression fabric. Both things exist in the same person.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="tag">Community Segments</span>
+      <h3 style="margin-bottom:28px">Who the Brand Seeds First</h3>
+      <table class="vtable">
+        <thead><tr><th>Segment</th><th>Why They Matter</th></tr></thead>
+        <tbody>
+          <tr><td>High-Level Athletes</td><td>NFL, NBA, and college-level athletes carry the brand into the highest visibility environments. One organic post from the right person reaches millions of the exact target customer simultaneously.</td></tr>
+          <tr><td>Professional Dance Community</td><td>Sweatsuits are the standard uniform in this world. Professional dancers wear athletic clothing all day, every day, which means the product gets real-world visibility at the highest level of physical demand. It proves the function.</td></tr>
+          <tr><td>Entertainment &amp; Music</td><td>Musicians and entertainers operate at the intersection of fashion and culture. They are the connective tissue between the athletic world and the street.</td></tr>
+          <tr><td>Youth Sports: Track &amp; 7v7</td><td>High school track clubs and flag football leagues are where the next generation is formed. Sponsoring these teams does two things: it builds genuine community equity and it seeds aspirational desire in the exact age group that will become premium customers in five years.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 VISUAL IDENTITY ============ -->
+<section id="identity" class="dark">
+  <div class="wrap">
+    <div class="section-head"><span class="no">05</span><h2>Visual<br>Identity</h2></div>
+
+    <!-- LOGO -->
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Mark</span>
+        <h3>Monogram &amp; Wordmark</h3>
+      </div>
+      <div>
+        <p>The With Us mark is a blackletter-inspired monogram built from the letters W and U, fused into a single form that reads as both initials and a unified symbol. It is deliberately heavy, referencing the weight of heritage type used in editorial mastheads and classic print, then stripped back to feel modern and quiet on a garment.</p>
+        <p>The mark works hardest at larger sizes, on the front of a fitted cap, embossed on a chest, or as a full-bleed graphic. At smaller sizes, the wordmark WITHUS in tracked capitals takes over, giving the brand a clean, confident secondary identity that reads clearly on tags, labels, and digital UI.</p>
+      </div>
+    </div>
+
+    <div class="block logo-grid">
+      <div class="logo-tile on-dark"><svg viewBox="0 0 1000 1000"><use href="#wu-mark" class="fill-champ"/></svg><span class="cap">Icon · Champagne on Dark</span></div>
+      <div class="logo-tile on-light"><svg viewBox="0 0 1000 1000"><use href="#wu-mark" class="fill-dark"/></svg><span class="cap">Icon · Dark on Light</span></div>
+      <div class="logo-tile word on-dark"><svg viewBox="0 0 600 150"><text x="300" y="112" text-anchor="middle" font-family="Roboto Condensed, sans-serif" font-weight="700" font-size="118" letter-spacing="9" fill="#aea59c">WITHUS</text></svg><span class="cap">Wordmark · Champagne on Dark</span></div>
+      <div class="logo-tile word on-light"><svg viewBox="0 0 600 150"><text x="300" y="112" text-anchor="middle" font-family="Roboto Condensed, sans-serif" font-weight="700" font-size="118" letter-spacing="9" fill="#2b2b2b">WITHUS</text></svg><span class="cap">Wordmark · Dark on Light</span></div>
+    </div>
+
+    <!-- USAGE + DON'TS -->
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Logo Usage Rules</span>
+        <h3 style="margin-bottom:20px">How to Use the Logo System</h3>
+        <table class="vtable">
+          <thead><tr><th>Use the Icon Mark When</th><th>Use the Wordmark When</th></tr></thead>
+          <tbody>
+            <tr><td>Hats, embroidered garments, and merchandise</td><td>Website header, navigation, and UI elements</td></tr>
+            <tr><td>Large format print, event signage, and backdrops</td><td>Clothing tags, labels, and interior branding</td></tr>
+            <tr><td>Social media profile images and avatars</td><td>Small-scale applications under 1 inch wide</td></tr>
+            <tr><td>Collaborations and co-branded products</td><td>Email headers and digital communications</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <span class="tag">Logo Don'ts</span>
+        <h3 style="margin-bottom:20px">What Never Happens to the Logo</h3>
+        <div class="donts" style="grid-template-columns:1fr">
+          <div><span class="x">✕</span> Never stretch or distort the mark in any direction.</div>
+          <div><span class="x">✕</span> Never place the champagne logo on a light background. It only works on dark or photographed surfaces.</div>
+          <div><span class="x">✕</span> Never place the dark logo on a black or near-black surface without sufficient contrast.</div>
+          <div><span class="x">✕</span> Never add drop shadows, outlines, or effects to the logo.</div>
+          <div><span class="x">✕</span> Never use the icon mark at sizes below 24px or 0.5 inches in print.</div>
+          <div><span class="x">✕</span> Never recreate the logo in any other typeface or weight.</div>
+          <div><span class="x">✕</span> Never surround the logo with other graphic elements that compete with its weight.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COLOR -->
+    <div class="block">
+      <span class="tag">Color System</span>
+      <h3 style="margin-bottom:8px">The Color Palette</h3>
+      <p style="margin-bottom:30px">The With Us palette is built on restraint. Natural tones, industrial surfaces, and the quiet confidence of a brand that does not need to shout to be heard. Every color in the system has a job. Nothing is decorative for its own sake. <span class="muted">Click any swatch to copy its hex.</span></p>
+      <div class="swatches">
+        <div class="swatch" data-hex="#2b2b2b"><div class="chip" style="background:#2b2b2b"></div><div class="meta"><div class="nm">Near Black</div><div class="hex">#2B2B2B</div><div class="use">Primary background. Website dark mode, garment bases, primary apparel colorway.</div><div class="copy">Click to copy</div></div></div>
+        <div class="swatch" data-hex="#afa69c"><div class="chip" style="background:#afa69c"></div><div class="meta"><div class="nm">Champagne</div><div class="hex">#AFA69C</div><div class="use">Brand accent. Logo on dark backgrounds, highlight text, fine detail lines, product labels.</div><div class="copy">Click to copy</div></div></div>
+        <div class="swatch" data-hex="#c2bdba"><div class="chip" style="background:#c2bdba"></div><div class="meta"><div class="nm">Stone</div><div class="hex">#C2BDBA</div><div class="use">Secondary neutral. Supporting text on dark backgrounds, subtle UI elements, secondary graphic use.</div><div class="copy">Click to copy</div></div></div>
+        <div class="swatch" data-hex="#d4d4d4"><div class="chip" style="background:#d4d4d4"></div><div class="meta"><div class="nm">Concrete</div><div class="hex">#D4D4D4</div><div class="use">Tertiary neutral. Dividers, borders, placeholder text, disabled states.</div><div class="copy">Click to copy</div></div></div>
+        <div class="swatch" data-hex="#efefef"><div class="chip" style="background:#efefef;border-bottom:1px solid #ddd"></div><div class="meta"><div class="nm">Off White</div><div class="hex">#EFEFEF</div><div class="use">Light background. Cards, content areas on light pages, reversed layout sections.</div><div class="copy">Click to copy</div></div></div>
+      </div>
+    </div>
+
+    <!-- TYPOGRAPHY -->
+    <div class="block">
+      <span class="tag">Typography</span>
+      <h3 style="margin-bottom:8px">Two Jobs, One Tension</h3>
+      <p style="margin-bottom:24px">Rubik handles authority, presence, and structure — the headline voice. Atkinson Hyperlegible handles warmth, readability, and approachability — the voice in long form. Together they create the same tension the brand lives in: strength and warmth.</p>
+
+      <div class="type-spec">
+        <div class="label"><b>Display</b>Rubik · Bold</div>
+        <div><div class="spec-roboto-bold">Rejection Created Obsession</div></div>
+      </div>
+      <div class="type-spec">
+        <div class="label"><b>Sub-Headline</b>Rubik · Medium</div>
+        <div><div class="spec-roboto-reg">Foundation Tee · Mesh Short</div></div>
+      </div>
+      <div class="type-spec">
+        <div class="label"><b>Body</b>Atkinson Hyperlegible · Regular</div>
+        <div><p class="spec-rubik">Broken in from the first wear. Built to last past the last rep. A garment should look clean and right from ten feet away, and reveal its craft when someone gets close enough to touch it.</p></div>
+      </div>
+      <div class="type-spec">
+        <div class="label"><b>UI / Labels</b>Atkinson Hyperlegible · Bold</div>
+        <div><div class="spec-rubik-bold">ADD TO BAG &nbsp;·&nbsp; VIEW COLLECTION &nbsp;·&nbsp; JOIN THE SIGNAL</div></div>
+      </div>
+      <div class="type-spec">
+        <div class="label"><b>Character</b>Rubik</div>
+        <div><div class="glyphs">A B C D E F G · a b c d e f g · 0 1 2 3 4 5</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURE IMAGE ============ -->
+<section class="feature" style="padding:0">
+  <div class="img" style="background-image:url('assets/img/foundation-tee-with-us-black-ghost-mannequin.jpg')"></div>
+  <div class="txt dark" style="background:var(--near-black)">
+    <span class="tag" style="color:var(--champagne)">Product Philosophy</span>
+    <h3 class="display" style="font-size:clamp(28px,4vw,52px);color:var(--off-white);margin-bottom:20px">Simple on the Surface.<br>Serious Underneath.</h3>
+    <p style="color:var(--stone);max-width:46ch">The With Us product aesthetic is built on the belief that real quality does not need to announce itself. A garment should look clean and right from ten feet away. It should reveal its craft when someone gets close enough to actually touch it. The tonal puff print that only shows itself in the right light. The hidden pocket that sits flush without a single wrinkle. The compression layer that is not visible from the outside but performs like a professional jersey when the work starts.</p>
+    <p style="color:var(--stone);max-width:46ch;margin-top:14px">This is not minimalism for its own sake. It is confidence. A brand that trusts its product enough to let the product speak.</p>
+  </div>
+</section>
+
+<!-- ============ 06 PRODUCT ============ -->
+<section id="product">
+  <div class="wrap">
+    <div class="section-head"><span class="no">06</span><h2>Product<br>Philosophy</h2></div>
+
+    <div class="block">
+      <span class="tag">Materials</span>
+      <h3 style="margin-bottom:28px">What the Product Is Made Of</h3>
+      <table class="vtable">
+        <thead><tr><th>Product</th><th>Material</th><th>Why It Matters</th></tr></thead>
+        <tbody>
+          <tr><td>T-Shirts</td><td>80% Cotton / 20% Stretch-Poly</td><td>Structure that holds its shape. Stretch that moves with the body. A weight that feels substantial without being stiff.</td></tr>
+          <tr><td>Mesh Shorts</td><td>Nylon / Spandex Jersey Mesh</td><td>The same fabric used in professional sports jerseys. Real compression, real breathability, real performance. Not a costume version of athletic wear.</td></tr>
+          <tr><td>Sweatsuits</td><td>Premium Poly-Cotton Blend</td><td>Built for all-day wear. The standard uniform of the professional dance world, made to a standard that holds up on camera and in the gym.</td></tr>
+          <tr><td>Hats</td><td>New Era Official Caps x BSN Sports</td><td>Not a branded blank. A licensed professional cap, the same base used by major league teams. It signals immediately that this is not amateur work.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Made in L.A.</span>
+        <h3>Manufacturing as Brand Value</h3>
+      </div>
+      <div>
+        <p>Every garment is made in Los Angeles. This is not a marketing line. It is a commitment that shapes how the brand operates, who it works with, and what it stands for. Local manufacturing means the people making the product are part of the same community the brand serves. It means quality control is close. It means the supply chain is accountable.</p>
+        <p>The manufacturing partner absorbs the cost of errors. That is a non-negotiable condition of the relationship. It signals mutual investment in getting it right, not just getting it shipped.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 GROWTH ============ -->
+<section id="growth" class="dark">
+  <div class="wrap">
+    <div class="section-head"><span class="no">07</span><h2>Growth &amp; Business<br>Strategy</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Collaboration Model</span>
+        <h3>Growing Through Alignment, Not Advertising</h3>
+      </div>
+      <div>
+        <p>With Us does not plan to grow by buying attention. The model is built on earned attention through genuine alignment. The Kith playbook is the reference point: identify niche brands with established audiences, build collaborations that make sense culturally and aesthetically, and let the combined fanbase of both brands discover something new together.</p>
+        <p>Every collaboration is a proof of concept. It proves that With Us can hold its own beside established names. It proves that the product is good enough to anchor a joint release. And it introduces the brand to a new audience who came for the collaboration and stays for what With Us is building on its own.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Launch Strategy</span>
+        <h3>How the Brand Enters the World</h3>
+      </div>
+      <div>
+        <p>The launch is not a website going live. The launch is an event. Co-hosted with 88 Studios, the launch party is designed to be a moment that people feel, not just a product drop they scroll past. QR codes at the event connect the physical experience directly to the digital store, offering a 50% discount to everyone in the room. This is not a sale. It is an initiation.</p>
+        <p>The first 500 people who join the email list get one full year of exclusive benefits. That number is deliberate. It is small enough to feel real and large enough to build a genuine founding community.</p>
+        <p>The first drop is a soft launch: a handful of t-shirts and mesh shorts. Enough to test the supply chain, prove the quality, and plant the seed. The full collection follows when the infrastructure is proven.</p>
+      </div>
+    </div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">Financial Horizon</span>
+        <h3>Where This Goes</h3>
+      </div>
+      <div>
+        <p>The target is $3 million to $5 million in revenue within three years. That is achievable at this price point with a properly seeded community, a collaboration pipeline, and seasonal drops that create consistent demand without oversaturating the market.</p>
+        <p>The revenue trajectory is not the point by itself. The revenue funds the mission. It funds the youth sponsorships, the community clinics, the accessible gear. Every dollar at the premium end of the price range is doing two jobs: building the brand above and investing in the community below.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 DIGITAL ============ -->
+<section id="digital">
+  <div class="wrap">
+    <div class="section-head"><span class="no">08</span><h2>Digital &amp; Website<br>Strategy</h2></div>
+
+    <div class="block grid cols-2">
+      <div>
+        <span class="tag">The Experience</span>
+        <h3>A Website That Earns Attention</h3>
+      </div>
+      <div>
+        <p>The reference point is Aimé Leon Dore. Not because With Us is trying to be ALD, but because ALD understood something important: a website for a clothing brand is not a catalogue. It is a world. You enter it and you understand something about who the people behind the brand are and why they made what they made.</p>
+        <p>With Us adopts this principle completely. The site is cinematic. It moves with intention. Scrolling is not passive. As the visitor moves down the page, the site zooms into the garment details, the things you would only notice if you were holding the piece in your hands. Hidden pockets become visible. Puff print catches the light. The compression layer separates from the shell. The website does the tactile work that a physical store would do.</p>
+      </div>
+    </div>
+
+    <div class="block">
+      <span class="tag">UX Principles</span>
+      <h3 style="margin-bottom:24px">How the Site Behaves</h3>
+      <div class="principles">
+        <div class="p"><div class="n">01</div><p>Every scroll interaction has a purpose. Nothing moves just because it can.</p></div>
+        <div class="p"><div class="n">02</div><p>Product detail pages zoom into garment features on scroll, revealing the craft before asking for the purchase.</p></div>
+        <div class="p"><div class="n">03</div><p>The visual language is dark, quiet, and editorial. High contrast. Deliberate white space. Typography that gives words room to land.</p></div>
+        <div class="p"><div class="n">04</div><p>AI-assisted lifestyle photography places garments in elevated, realistic environments where the target customer already exists.</p></div>
+        <div class="p"><div class="n">05</div><p>Community tech is integrated at every touchpoint: QR codes at live events route directly to the store with the event discount pre-applied.</p></div>
+        <div class="p"><div class="n">06</div><p>Email capture for founding members runs persistently until the 500-person limit is reached, then closes. No exceptions.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="foot">
+  <div class="wrap" style="padding:0">
+    <div class="big">With&nbsp;Us</div>
+    <div class="ethos">Built by the Ones Who Stayed</div>
+    <div class="meta">
+      <span>With Us · Brand Architecture 2026</span>
+      <span>Confidential · All Rights Reserved</span>
+      <span>Made in L.A.</span>
+    </div>
+  </div>
+</footer>
+
+<div id="toast">Copied</div>
+
+<script>
+/* scrollspy */
+const links=[...document.querySelectorAll('.sidenav a')];
+const map=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
+const io=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(l=>l.classList.remove('active'));
+      const a=map.get(e.target.id); if(a)a.classList.add('active');
+    }
+  });
+},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section[id]').forEach(s=>io.observe(s));
+
+/* dark-aware sidenav (invert dot color over dark sections) */
+const darkIO=new IntersectionObserver(es=>{
+  es.forEach(e=>{ if(e.isIntersecting) document.body.classList.toggle('on-dark', e.target.classList.contains('dark')); });
+},{rootMargin:'-50% 0px -50% 0px'});
+document.querySelectorAll('section, header.hero, footer').forEach(s=>darkIO.observe(s));
+
+/* copy hex */
+const toast=document.getElementById('toast');
+let t;
+document.querySelectorAll('.swatch').forEach(sw=>{
+  sw.addEventListener('click',()=>{
+    const hex=sw.dataset.hex;
+    navigator.clipboard?.writeText(hex.toUpperCase());
+    toast.textContent='Copied '+hex.toUpperCase();
+    toast.classList.add('show');
+    clearTimeout(t); t=setTimeout(()=>toast.classList.remove('show'),1400);
+  });
+});
+</script>
+</body>
+</html>
